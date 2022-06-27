@@ -500,9 +500,9 @@ CMDF do_homepage( CHAR_DATA * ch, char *argument )
    if( IS_NPC( ch ) )
       return;
 
-   if( !argument || argument[0] == '\0' )
+   if( !argument || argument[0] == 0 )
    {
-      if( ch->pcdata->homepage && ch->pcdata->homepage != '\0' )
+      if( ch->pcdata->homepage && ch->pcdata->homepage != 0 )
          ch_printf( ch, "Your homepage is: %s\n\r", show_tilde( ch->pcdata->homepage ) );
       else
          send_to_char( "You have no homepage set yet.\n\r", ch );

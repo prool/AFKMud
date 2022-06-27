@@ -376,7 +376,7 @@ void update_sayhistory( CHAR_DATA * vch, CHAR_DATA * ch, const char *msg )
 
    for( x = 0; x < MAX_SAYHISTORY; x++ )
    {
-      if( vch->pcdata->say_history[x] == '\0' )
+      if( vch->pcdata->say_history[x] == 0 )
       {
          vch->pcdata->say_history[x] = str_dup( new_msg );
          break;
@@ -696,7 +696,7 @@ void update_tellhistory( CHAR_DATA * vch, CHAR_DATA * ch, const char *msg, bool 
 
    for( x = 0; x < MAX_TELLHISTORY; x++ )
    {
-      if( !tch->pcdata->tell_history[x] || tch->pcdata->tell_history[x] == '\0' )
+      if( !tch->pcdata->tell_history[x] || tch->pcdata->tell_history[x] == 0 )
       {
          tch->pcdata->tell_history[x] = str_dup( new_msg );
          break;

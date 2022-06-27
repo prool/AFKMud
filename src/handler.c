@@ -4551,11 +4551,11 @@ OBJ_DATA *clone_object( OBJ_DATA * obj )
    clone->objdesc = QUICKLINK( obj->objdesc );
    if( obj->action_desc && obj->action_desc[0] != '\0' )
       clone->action_desc = QUICKLINK( obj->action_desc );
-   if( obj->socket[0] && obj->socket[0] != '\0' )
+   if( obj->socket[0] && obj->socket[0] != 0 )
       clone->socket[0] = QUICKLINK( obj->socket[0] );
-   if( obj->socket[1] && obj->socket[1] != '\0' )
+   if( obj->socket[1] && obj->socket[1] != 0 )
       clone->socket[1] = QUICKLINK( obj->socket[1] );
-   if( obj->socket[2] && obj->socket[2] != '\0' )
+   if( obj->socket[2] && obj->socket[2] != 0 )
       clone->socket[2] = QUICKLINK( obj->socket[2] );
    clone->item_type = obj->item_type;
    clone->extra_flags = obj->extra_flags;

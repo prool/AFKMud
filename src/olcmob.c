@@ -229,7 +229,7 @@ void spec_menu( void )
       j++;
       specmenu[j] = specfun->name;
    }
-   specmenu[j + 1] = '\0';
+   specmenu[j + 1] = 0;
    SPEC_MAX = j + 1;
 }
 

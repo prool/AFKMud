@@ -25,6 +25,8 @@
  *             Extended Mud Features Module: MCCP V2, MSP, MXP              *
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wnarrowing" // prool
+
 /*
  * Ported to SMAUG by Garil of DOTDII Mud
  * aka Jesse DeFer <dotd@primenet.com>

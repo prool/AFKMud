@@ -1163,9 +1163,9 @@ CMDF do_ban( CHAR_DATA * ch, char *argument )
       return;
    }
 
-   if( arg1 != '\0' )
+   if( arg1 != 0 )
    {
-      if( arg2[0] == '\0' )
+      if( arg2[0] == 0 )
       {
          do_ban( ch, "" );
          return;

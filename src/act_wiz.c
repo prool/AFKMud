@@ -167,7 +167,7 @@ CMDF do_newpassword( CHAR_DATA * ch, char *argument )
    argument = one_argument( argument, arg1 );
    argument = one_argument( argument, arg2 );
 
-   if( ( ch->pcdata->pwd != '\0' ) && ( arg1[0] == '\0' || arg2[0] == '\0' ) )
+   if( ( ch->pcdata->pwd != 0 ) && ( arg1[0] == 0 || arg2[0] == 0 ) )
    {
       send_to_char( "Syntax: newpass <char> <newpassword>.\n\r", ch );
       return;

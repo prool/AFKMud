@@ -25,6 +25,9 @@
  *                     Low-level communication module                       *
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wwrite-strings" // prool
+#pragma GCC diagnostic ignored "-Wnarrowing" // prool
+
 #include <stdarg.h>
 #include <string.h>
 #include <ctype.h>
@@ -4767,7 +4770,9 @@ int main( int argc, char **argv )
     */
    log_string( "Normal termination of game." );
    log_string( "Cleaning up Memory.&d" );
+   printf("prool debug: cleaning up memory\n"); // prool
    cleanup_memory(  );
+   printf("prool debug: exit\n"); // prool
    exit( 0 );
 }
 

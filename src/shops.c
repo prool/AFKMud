@@ -112,6 +112,7 @@ void load_shopkeepers( void )
    char filename[256];
 
    snprintf( directory_name, 100, "%s", SHOP_DIR );
+   //printf("prool debug dir '%s'\n", directory_name); // prool
    dp = opendir( directory_name );
    dentry = readdir( dp );
    while( dentry )
@@ -2136,7 +2137,7 @@ CMDF do_deposit( CHAR_DATA * ch, char *argument )
       return;
    }
 
-   if( !argument || argument == '\0' )
+   if( !argument || argument == 0 )
    {
       send_to_char( "How much gold do you wish to deposit?\n\r", ch );
       return;

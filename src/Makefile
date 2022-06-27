@@ -48,11 +48,7 @@ OPT_FLAG = -pipe -Os
 DEBUG_FLAG = -g2
 #PROF_FLAG = -pg
 
-W_FLAGS = -Wall -Wextra -Wformat-security -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wredundant-decls
-
-ifndef WINDOZE
-   W_FLAGS := -Werror
-endif
+W_FLAGS = -Wall -Wextra -Wformat-security -Wshadow -Wpointer-arith -Wcast-align -Wcast-qual -Wredundant-decls -Wno-write-strings
 
 C_FLAGS = $(MACHINE) $(W_FLAGS) $(DEBUG_FLAG) $(OPT_FLAG) $(PROF_FLAG) $(SOLARIS_FLAG) $(EXPORT_SYMBOLS)
 L_FLAGS = $(MACHINE) $(DEBUG_FLAG) $(OPT_FLAG) $(PROF_FLAG) $(EXPORT_SYMBOLS) $(SOLARIS_LINK) -lz $(MATH_LIB) $(NEED_DL)

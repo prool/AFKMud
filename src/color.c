@@ -27,6 +27,8 @@
  *                      Enhanced ANSI parser by Samson                      *
  ****************************************************************************/
 
+#pragma GCC diagnostic ignored "-Wwrite-strings" // prool
+
 /*
 * The following instructions assume you know at least a little bit about
 * coding.  I firmly believe that if you can't code (at least a little bit),
@@ -852,7 +854,7 @@ int colorcode( const char *src, char *dst, DESCRIPTOR_DATA * d, int dstlen, int 
                break;
 
             case '[':  /* Symbolic color name */
-               if( ( sympos = strchr( src + 2, ']' ) ) )
+               if( ( sympos = (char *)strchr( src + 2, ']' ) ) )
                {
                   register int subcnt = 0;
                   unsigned int sublen = 0;
@@ -1322,7 +1324,7 @@ char *colorize( const char *txt, DESCRIPTOR_DATA * d )
       char colbuf[20];
       int ln;
 
-      while( ( colstr = strpbrk( prevstr, "&{}hH" ) ) != NULL )
+      while( ( colstr = (char *)strpbrk( prevstr, "&{}hH" ) ) != NULL )
       {
          register int reslen = 0;
 
