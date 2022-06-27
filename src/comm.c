@@ -248,6 +248,17 @@ void free_shellcommands( void );
 #endif
 void free_events( void );
 
+// prool begin
+// prool here: http://mud.kharkov.org proolix@gmail.com
+int isprool(char c) // prool's modif for isprint
+{
+if ((c<32)&&(c>=0)) return 0;
+if (c==-1) return 0;
+if (c==-3) return 0;
+return 1;
+}
+// prool end
+
 void set_alarm( long seconds )
 {
    alarm( seconds );
@@ -1705,7 +1716,8 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
        * * You'd think being the 21st century and all that this wouldn't be the case, but you can
        * * thank the bastards in Redmond for this.
        */
-      else if( isascii( d->inbuf[i] ) && isprint( d->inbuf[i] ) )
+      //else if( isascii( d->inbuf[i] ) && isprint( d->inbuf[i] ) )
+      else if( isprool( d->inbuf[i] ) ) // internatiolization (UTFization) by prool
          d->incomm[k++] = d->inbuf[i];
    }
 
